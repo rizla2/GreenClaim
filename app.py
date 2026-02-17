@@ -4,9 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 
 # --- CONFIGURATION ---
-GOOGLE_API_KEY = "AIzaSyCPfrH9rz8fdpbcscxux03ogW5z-0TVBpA" 
-
-genai.configure(api_key=GOOGLE_API_KEY)
+# This grabs the key from the secure Streamlit settings
+if "GOOGLE_API_KEY" in st.secrets:
+    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+else:
+    st.error("Missing API Key. Go to Streamlit Settings -> Secrets.")
 
 # THE EXACT MODEL YOU REQUESTED
 model = genai.GenerativeModel(
