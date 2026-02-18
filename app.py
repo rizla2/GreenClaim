@@ -71,31 +71,29 @@ def scrape_website(url):
     except Exception as e:
         return f"Error scraping website: {e}"
 
-# --- THE WEBSITE UI ---
+# --- THE WEBSITE UI CONFIGURATION ---
 st.set_page_config(page_title="ZeroWash.ai", page_icon="🛡️")
-st.markdown("""
-    <style>
-    /* Hide the Streamlit anchor link buttons */
-    [data-testid="stHeaderAction"] {
-        display: none !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-# --- HIDE STREAMLIT BRANDING & ADD CUSTOM STYLE ---
-st.markdown("""
-    <style>
-    /* Remove the 'Made with Streamlit' footer & menu */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
 
-    /* Enterprise Font & Background */
+# --- GLOBAL STYLES (Hide Anchors, Hide Branding, Enterprise Theme) ---
+st.markdown("""
+    <style>
+    /* 1. HIDE ANCHOR LINKS (The Chain Icon) - Nuclear Option */
+    [data-testid="stHeaderAction"] { display: none !important; }
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { display: none !important; pointer-events: none; cursor: default; }
+    .st-emotion-cache-1wbqy5l { display: none !important; }
+
+    /* 2. HIDE STREAMLIT BRANDING */
+    #MainMenu { visibility: hidden; }
+    footer { visibility: hidden; }
+    header { visibility: hidden; }
+
+    /* 3. ENTERPRISE THEME */
     .stApp {
         background-color: #f4f6f9;
         font-family: 'Arial', sans-serif;
     }
 
-    /* Professional Button Style */
+    /* 4. PROFESSIONAL BUTTON STYLE */
     .stButton>button {
         background-color: #0056b3; /* Corporate Blue */
         color: white;
@@ -111,7 +109,7 @@ st.markdown("""
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    /* Warning Box Style */
+    /* 5. WARNING BOX STYLE */
     div[data-testid="stMarkdownContainer"] > h3 {
         color: #d32f2f; /* Compliance Red */
         padding-bottom: 10px;
