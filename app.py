@@ -112,8 +112,9 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 st.title("🛡️ ZeroWash.ai")
-st.info("Paste the EXACT link to the sustainability page.")
 st.subheader("Automated Compliance for the 2026 Green Claims Directive")
+st.info("Paste the EXACT link to the sustainability page.")
+
 
 url_input = st.text_input("Target URL (e.g., https://www.hm.com/sustainability)", "")
 
