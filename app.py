@@ -73,6 +73,14 @@ def scrape_website(url):
 
 # --- THE WEBSITE UI ---
 st.set_page_config(page_title="ZeroWash.ai", page_icon="🛡️")
+st.markdown("""
+    <style>
+    /* Hide the Streamlit anchor link buttons */
+    [data-testid="stHeaderAction"] {
+        display: none !important;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 # --- HIDE STREAMLIT BRANDING & ADD CUSTOM STYLE ---
 st.markdown("""
     <style>
