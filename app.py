@@ -72,7 +72,7 @@ def scrape_website(url):
         return f"Error scraping website: {e}"
 
 # --- THE WEBSITE UI ---
-st.set_page_config(page_title="GreenClaim AI", page_icon="⚖️")
+st.set_page_config(page_title="ZeroWash.ai", page_icon="🛡️")
 # --- HIDE STREAMLIT BRANDING & ADD CUSTOM STYLE ---
 st.markdown("""
     <style>
@@ -111,8 +111,9 @@ st.markdown("""
     }
     </style>
     """, unsafe_allow_html=True)
-st.title("⚖️ GreenClaim AI Auditor")
+st.title("🛡️ ZeroWash.ai")
 st.info("Paste the EXACT link to the sustainability page.")
+st.subheader("Automated Compliance for the 2026 Green Claims Directive")
 
 url_input = st.text_input("Target URL (e.g., https://www.hm.com/sustainability)", "")
 
